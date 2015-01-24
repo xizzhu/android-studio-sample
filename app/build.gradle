@@ -41,6 +41,11 @@ android {
             proguardFile getDefaultProguardFile('proguard-android-optimize.txt')
             signingConfig signingConfigs.release
         }
+
+        tests {
+            versionNameSuffix " tests"
+            applicationIdSuffix '.tests'
+        }
     }
 }
 
