@@ -14,25 +14,20 @@
  *  limitations under the License.
  */
 
-package net.zionsoft.sample.app;
+package net.zionsoft.sample.library;
 
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
-import android.view.View;
 
-import net.zionsoft.sample.library.AnotherActivity;
+public class AnotherActivity extends ActionBarActivity {
+    public static Intent newStartIntent(Context context) {
+        return new Intent(context, AnotherActivity.class);
+    }
 
-public class MainActivity extends ActionBarActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-        setContentView(R.layout.activity_main);
-        findViewById(R.id.button).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(AnotherActivity.newStartIntent(MainActivity.this));
-            }
-        });
     }
 }

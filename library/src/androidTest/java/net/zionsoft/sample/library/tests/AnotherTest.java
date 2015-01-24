@@ -14,25 +14,22 @@
  *  limitations under the License.
  */
 
-package net.zionsoft.sample.app;
+package net.zionsoft.sample.library.tests;
 
-import android.os.Bundle;
-import android.support.v7.app.ActionBarActivity;
-import android.view.View;
+import android.test.ActivityInstrumentationTestCase2;
 
 import net.zionsoft.sample.library.AnotherActivity;
 
-public class MainActivity extends ActionBarActivity {
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
+public class AnotherTest extends ActivityInstrumentationTestCase2<AnotherActivity> {
+    public AnotherTest() {
+        super(AnotherActivity.class);
+    }
 
-        setContentView(R.layout.activity_main);
-        findViewById(R.id.button).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(AnotherActivity.newStartIntent(MainActivity.this));
-            }
-        });
+    @Override
+    protected void setUp() throws Exception {
+        super.setUp();
+    }
+
+    public void testAnotherCase() {
     }
 }

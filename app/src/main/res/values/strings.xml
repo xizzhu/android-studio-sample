@@ -4,4 +4,6 @@
     <string name="app_name">Sample</string>
     <string name="activity_main">Sample</string>
 
+    <string name="open">Open Another Activity</string>
+
 </resources>
