@@ -1,3 +1,7 @@
+repositories {
+    mavenCentral()
+}
+
 apply plugin: 'com.android.application'
 
 android {
@@ -14,6 +18,8 @@ android {
         versionCode 1
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
+
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
 
     signingConfigs {
@@ -43,13 +49,23 @@ android {
         }
 
         tests {
+            initWith(buildTypes.debug)
+
             versionNameSuffix " tests"
             applicationIdSuffix '.tests'
         }
+    }
+
+    packagingOptions {
+        exclude 'LICENSE.txt'
     }
 }
 
 dependencies {
     compile "com.android.support:appcompat-v7:21.0.3"
     compile project(":library")
+
+    androidTestCompile "com.squareup:javawriter:2.5.1"
+    androidTestCompile "com.android.support.test.espresso:espresso-core:2.0"
+    androidTestCompile "com.android.support.test:testing-support-lib:0.1"
 }
