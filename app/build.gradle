@@ -50,8 +50,6 @@ android {
         }
 
         tests {
-            initWith(buildTypes.debug)
-
             versionNameSuffix " tests"
             applicationIdSuffix '.tests'
         }
