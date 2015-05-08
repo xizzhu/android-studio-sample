@@ -19,9 +19,9 @@ package net.zionsoft.sample.library;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.ActionBarActivity;
+import android.support.v7.app.AppCompatActivity;
 
-public class AnotherActivity extends ActionBarActivity {
+public class AnotherActivity extends AppCompatActivity {
     public static Intent newStartIntent(Context context) {
         return new Intent(context, AnotherActivity.class);
     }

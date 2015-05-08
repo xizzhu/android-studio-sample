@@ -14,12 +14,12 @@ android {
     }
 
     defaultConfig {
-        versionName "1.0.0"
+        versionName '1.0.0'
         versionCode 1
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
 
-        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        testInstrumentationRunner 'android.support.test.runner.AndroidJUnitRunner'
     }
 
     signingConfigs {
@@ -55,15 +55,15 @@ android {
     }
 
     jacoco {
-        version = "0.7.2.201409121644"
+        version = '0.7.4.201502262128'
     }
 }
 
 dependencies {
-    compile "com.android.support:appcompat-v7:21.0.3"
+    compile 'com.android.support:appcompat-v7:22.1.1'
     compile project(":library")
 
-    androidTestCompile "com.squareup:javawriter:2.5.1"
-    androidTestCompile "com.android.support.test.espresso:espresso-core:2.0"
-    androidTestCompile "com.android.support.test:testing-support-lib:0.1"
+    // as of now, com.android.support.test:runner:0.2 is using support library 22.0.0, introducing
+    // a conflict with support library 22.1.1
+    androidTestCompile 'com.android.support.test.espresso:espresso-core:2.0'
 }
