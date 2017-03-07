@@ -1,3 +1,6 @@
+Deprecated on behalf of [Android Sample](https://github.com/xizzhu/android-sample).
+-------
+
 A simple Android Studio project sample.
 
 License
